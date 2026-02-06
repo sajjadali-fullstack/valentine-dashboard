@@ -1,0 +1,167 @@
+:root {
+    --pink: #ff4d6d;
+    --dark: #0d0101;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--dark);
+    color: white;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Backgrounds */
+.bg-gradient {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, #3d0a12 0%, #0d0101 100%);
+    z-index: -2;
+}
+
+#hearts-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: var(--pink);
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px 10px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card.active:hover {
+    transform: translateY(-10px);
+    border-color: var(--pink);
+    background: rgba(255, 77, 109, 0.1);
+}
+
+.card.locked {
+    opacity: 0.4;
+    filter: grayscale(1);
+    cursor: not-allowed;
+}
+
+.card .icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Modals & Screens */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-box {
+    background: #1a1a1a;
+    border: 1px solid var(--pink);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 350px;
+}
+
+#m-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--pink);
+    margin: 0 0 15px;
+}
+
+/* Proposal Screen UI */
+#proposal-screen, #success-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: #ffe5ec;
+    z-index: 5000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.proposal-box img {
+    width: 200px;
+    border-radius: 20px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    height: 60px;
+}
+
+#yes-btn, #no-btn, .btn-primary {
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#yes-btn, .btn-primary { background: var(--pink); color: white; }
+#no-btn { background: #888; color: white; position: absolute; }
+
+.success-title { color: var(--pink); font-size: 3.5rem; margin: 0; font-family: 'Dancing Script'; }
+.success-msg { color: #333; font-size: 1.2rem; font-weight: 600; }
