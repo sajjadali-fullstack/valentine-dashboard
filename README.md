@@ -1,11 +1,15 @@
 # Valentine Dashboard 💖
 
-A fun Valentine’s Day dashboard with special features that unlock automatically on specific dates.  
-Built with HTML, CSS & JavaScript.
+A fun Valentine’s Day dashboard with **special surprises that unlock automatically based on the calendar dates**. 
+Built with HTML, CSS & JavaScript, Perfect to explore & **share with your loved one!** 💌  .
 
 ---
-live link : seeand share with ur love one 
 
+## 🌐 Live Demo
+Experience it yourself and spread the love:  
+**[View Live Dashboard](https://sajjadali-fullstack.github.io/valentine-dashboard/)**
+
+---
 ## Features
 - 🎁 Unlocks surprises based on the calendar date
 - ❤️ Countdown to Valentine’s Day
